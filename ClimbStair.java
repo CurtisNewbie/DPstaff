@@ -18,16 +18,17 @@ public class ClimbStair {
             return n;
         }
 
-        int m = 1;
-        int oneStep = 1; // init: climb(1)
-        int twoStep = 1; // init: climb(2)
-        for (int steps = 2; steps <= n; steps++) {
+
+        int prev = 1; // init: climb(1)
+        int curr = 2; // init: climb(2)
+        int m = curr;
+        for (int steps = 3; steps <= n; steps++) {
             // for climb(steps), there are m ways
-            // where oneStep is actually climb(steps-1)
-            // twoStep is actually climb(steps-2)
-            m = oneStep + twoStep;
-            oneStep = twoStep;
-            twoStep = m;
+            // where prev is actually climb(steps-1)
+            // curr is actually climb(steps-2)
+            m = prev + curr;
+            prev = curr;
+            curr = m;
         }
         return m;
     }
