@@ -119,8 +119,7 @@ public class CountSmallerNumber {
      * 
      * However, the problem is that we must know what the numbers in nums[] are beforehand, and
      * these numbers will surely not be consequtive. We must apply discretization, which is evenly
-     * distributing the arbitray numbers into a continguous area (array). This is essentially how
-     * HashTable work.
+     * distributing the arbitray numbers into a continguous area (array).
      */
     public List<Integer> countSmaller(int[] nums) {
         int n = nums.length;
